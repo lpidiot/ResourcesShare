@@ -30,6 +30,9 @@
               <text class="tit">标题文字</text>
               <text class="time">2019-10-21</text>
             </view>
+            <view class="fileRightBtn" bindtap="checkDetail">
+              <image src="../../images/more.png"></image>
+            </view>
           </view>
 
           <view class="fileWrap">
@@ -37,6 +40,9 @@
             <view class="headText">
               <text class="tit">标题文字</text>
               <text class="time">2019-10-21</text>
+            </view>
+            <view class="fileRightBtn" bindtap="checkDetail">
+              <image src="../../images/more.png"></image>
             </view>
           </view>
 
@@ -47,46 +53,11 @@
               <text class="tit">标题文字</text>
               <text class="time">2019-10-21</text>
             </view>
-          </view>
-
-          <view class="fileWrap">
-            <image src='../../images/folder.png'></image>
-            <view class="headText">
-              <text class="tit">标题文字</text>
-              <text class="time">2019-10-21</text>
+            <view class="fileRightBtn" bindtap="checkDetail">
+              <image src="../../images/more.png"></image>
             </view>
           </view>
 
-          <view class="fileWrap">
-            <image src='../../images/folder.png'></image>
-            <view class="headText">
-              <text class="tit">标题文字</text>
-              <text class="time">2019-10-21</text>
-            </view>
-          </view>
-
-          <view class="fileWrap">
-            <image src='../../images/folder.png'></image>
-            <view class="headText">
-              <text class="tit">标题文字</text>
-              <text class="time">2019-10-21</text>
-            </view>
-          </view>
-
-          <view class="fileWrap">
-            <image src='../../images/folder.png'></image>
-            <view class="headText">
-              <text class="tit">标题文字</text>
-              <text class="time">2019-10-21</text>
-            </view>
-          </view>
-          <view class="fileWrap">
-            <image src='../../images/folder.png'></image>
-            <view class="headText">
-              <text class="tit">标题文字</text>
-              <text class="time">2019-10-21</text>
-            </view>
-          </view>
 
         </view>
 
@@ -121,3 +92,32 @@
     <view>我的</view>
   </swiper-item>
 </swiper>
+
+<view class="detailBox {{showDetail?'':'show'}}" hidden="{{showDetail}}">
+  <view class="detailBar">
+    <view class="detail-title">
+      <image src=""></image> 标题 </view>
+
+    <view class="detail-item">
+      <image src="../../images/rename.png"></image>
+      <text>重命名</text>
+    </view>
+
+    <view class="detail-item">
+      <image src="../../images/remove.png"></image>
+      <text>删除</text>
+    </view>
+
+    <view class="detail-item">
+      <image src="../../images/copy.png"></image>
+      <text>复制链接</text>
+    </view>
+  </view>
+  <view class="detail-cancel" bindtap="checkDetail">
+    <text>取消</text>
+  </view>
+</view>
+
+
+<!-- 遮盖层 -->
+<view class="{{coverIsShow?'cover':''}}"></view>
