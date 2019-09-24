@@ -1,0 +1,186 @@
+/* 头部tab组件 */
+
+.nav {
+  width: 100%;
+  position: absolute;
+}
+
+.swiper-tab {
+  width: 100%;
+  border-bottom: 2rpx solid #fff;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  background-color: #fff;
+  margin-bottom: 30rpx;
+}
+
+.swiper-tab-item {
+  width: 30%;
+  color: #434343;
+}
+
+.active {
+  color: #f65959;
+  border-bottom: 4rpx solid #f65959;
+}
+
+swiper {
+  text-align: center;
+  height: calc(100vh - 120rpx);
+}
+
+/* 文件选项-搜索等部件 */
+
+.topBar {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 60rpx;
+  margin-bottom: 20rpx;
+}
+
+.searchBar {
+  flex: 18;
+  display: flex;
+  align-items: center;
+  background-color: #f3f3f3;
+  height: 65rpx;
+  border: 1rpx solid #eee;
+  box-shadow: 0 0 2rpx #eee;
+  border-radius: 30rpx;
+}
+
+.viewBar {
+  height: 65rpx;
+  flex: 2;
+}
+
+.viewBar image {
+  width: 58rpx;
+  height: 58rpx;
+  margin-left: 2rpx;
+}
+
+.searchBar input {
+  outline: none;
+  border: none;
+  text-align: left;
+}
+
+.searchBar image {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 文件显示样式 */
+
+.fileBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.fileWrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 80rpx;
+  margin: 45rpx 0;
+}
+
+.fileWrap .headText {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.fileWrap .headText text {
+  text-align: left;
+}
+
+.tit {
+  font-size: 32rpx;
+  font-weight: 550;
+}
+
+.time {
+  font-size: 26rpx;
+  font-weight: 440;
+  color: rgb(112, 112, 112);
+}
+
+.fileWrap image {
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0 20rpx;
+}
+
+/* 隐藏滚动条 */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.scroll {
+  height: 930rpx;
+}
+
+/* 底部工具栏 */
+
+.bootTool {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 95rpx;
+  padding: 0 30rpx;
+}
+
+.bootToolStyle-choose {
+  background-color: #e9e9e9;
+  padding: 0 30rpx;
+}
+
+.bootToolBox {
+  display: flex;
+  height: 100%;
+}
+
+.uploadBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 1;
+  height: 100%;
+  padding: 10rpx;
+}
+
+.uploadBar text {
+  width: 100%;
+  font-size: 23rpx;
+  font-weight: 444;
+}
+
+.bootToolBox image {
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.shareBar {
+  height: 100%;
+  flex: 2;
+  border: 1rpx solid #ededed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,123 @@
+<!--index.wxml-->
+<view class="">
+  <view class="swiper-tab">
+    <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">文件</view>
+    <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">共享</view>
+    <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">我的</view>
+  </view>
+</view>
+
+<swiper current="{{currentTab}}" duration="300" bindchange="swiperTab">
+  <swiper-item>
+    <view class="container">
+
+      <view class="topBar">
+        <view class="searchBar">
+          <image src='../../images/search.png'></image>
+          <input></input>
+        </view>
+
+        <view class="viewBar">
+          <image src='../../images/sort.png'></image>
+        </view>
+      </view>
+
+      <scroll-view scroll-y="true" class="scroll">
+        <view class="fileBox">
+          <view class="fileWrap">
+            <image src='../../images/folder.png'></image>
+            <view class="headText">
+              <text class="tit">标题文字</text>
+              <text class="time">2019-10-21</text>
+            </view>
+          </view>
+
+          <view class="fileWrap">
+            <image src='../../images/folder.png'></image>
+            <view class="headText">
+              <text class="tit">标题文字</text>
+              <text class="time">2019-10-21</text>
+            </view>
+          </view>
+
+
+          <view class="fileWrap">
+            <image src='../../images/folder.png'></image>
+            <view class="headText">
+              <text class="tit">标题文字</text>
+              <text class="time">2019-10-21</text>
+            </view>
+          </view>
+
+          <view class="fileWrap">
+            <image src='../../images/folder.png'></image>
+            <view class="headText">
+              <text class="tit">标题文字</text>
+              <text class="time">2019-10-21</text>
+            </view>
+          </view>
+
+          <view class="fileWrap">
+            <image src='../../images/folder.png'></image>
+            <view class="headText">
+              <text class="tit">标题文字</text>
+              <text class="time">2019-10-21</text>
+            </view>
+          </view>
+
+          <view class="fileWrap">
+            <image src='../../images/folder.png'></image>
+            <view class="headText">
+              <text class="tit">标题文字</text>
+              <text class="time">2019-10-21</text>
+            </view>
+          </view>
+
+          <view class="fileWrap">
+            <image src='../../images/folder.png'></image>
+            <view class="headText">
+              <text class="tit">标题文字</text>
+              <text class="time">2019-10-21</text>
+            </view>
+          </view>
+          <view class="fileWrap">
+            <image src='../../images/folder.png'></image>
+            <view class="headText">
+              <text class="tit">标题文字</text>
+              <text class="time">2019-10-21</text>
+            </view>
+          </view>
+
+        </view>
+
+      </scroll-view>
+
+    </view>
+
+    <view class="bootTool bootToolStyle-choose">
+      <view class="bootToolBox">
+
+        <view class="uploadBar">
+          <image src="../../images/add.png"></image>
+          <text>上传</text>
+        </view>
+
+        <view class="uploadBar">
+          <image src="../../images/choose.png"></image>
+          <text>选择</text>
+        </view>
+
+        <view class="shareBar">
+          预留按钮
+        </view>
+      </view>
+    </view>
+
+  </swiper-item>
+  <swiper-item>
+    <view>共享</view>
+  </swiper-item>
+  <swiper-item>
+    <view>我的</view>
+  </swiper-item>
+</swiper>
