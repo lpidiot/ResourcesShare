@@ -17,49 +17,38 @@
           <input></input>
         </view>
 
-        <view class="viewBar">
+        <view class="viewBar" bindtap="checkView">
           <image src='../../images/sort.png'></image>
         </view>
       </view>
 
       <scroll-view scroll-y="true" class="scroll">
-        <view class="fileBox">
-          <view class="fileWrap">
-            <image src='../../images/folder.png'></image>
-            <view class="headText">
-              <text class="tit">标题文字</text>
-              <text class="time">2019-10-21</text>
+        <view class="{{viewType=='list'?'fileBox':'fileCordBox'}}" wx:for='{{files}}' wx:for-item='file' wx:key='{{file.id}}'>
+
+          <view class="fileWrap" wx:if="{{viewType=='list'}}">
+            <view class=" {{viewType=='list'?'fileWrap myhover':'fileCord-wrap myhover'}}" bindtap="{{file.type == 'jpg'? 'openImage':''}}" data-path="{{file.path}}">
+              <image src='{{file.imgPath}}'></image>
+              <view class="headText" wx:if="{{viewType=='list'}}">
+                <text class="tit">{{file.name}}</text>
+                <text class="time">{{file.time}}</text>
+              </view>
+              <text class="tit" wx:if="{{viewType!='list'}}">{{file.name}}</text>
             </view>
             <view class="fileRightBtn" bindtap="checkDetail">
               <image src="../../images/more.png"></image>
             </view>
           </view>
-
-          <view class="fileWrap">
-            <image src='../../images/folder.png'></image>
-            <view class="headText">
-              <text class="tit">标题文字</text>
-              <text class="time">2019-10-21</text>
-            </view>
-            <view class="fileRightBtn" bindtap="checkDetail">
-              <image src="../../images/more.png"></image>
-            </view>
-          </view>
-
-
-          <view class="fileWrap">
-            <image src='../../images/folder.png'></image>
-            <view class="headText">
-              <text class="tit">标题文字</text>
-              <text class="time">2019-10-21</text>
-            </view>
-            <view class="fileRightBtn" bindtap="checkDetail">
-              <image src="../../images/more.png"></image>
-            </view>
-          </view>
-
-
         </view>
+
+        <!-- <view class="fileCordBox">
+          <view class="fileCord-wrap">
+            <image src='../../images/fileType/word.png'></image>
+            <text>文件名称</text>
+            <view class="fileCordRightBtn" bindtap="checkDetail">
+              <image src="../../images/more.png"></image>
+            </view>
+          </view>
+        </view> -->
 
       </scroll-view>
 
@@ -98,17 +87,17 @@
     <view class="detail-title">
       <image src=""></image> 标题 </view>
 
-    <view class="detail-item">
+    <view class="detail-item myhover">
       <image src="../../images/rename.png"></image>
       <text>重命名</text>
     </view>
 
-    <view class="detail-item">
+    <view class="detail-item myhover">
       <image src="../../images/remove.png"></image>
       <text>删除</text>
     </view>
 
-    <view class="detail-item">
+    <view class="detail-item myhover">
       <image src="../../images/copy.png"></image>
       <text>复制链接</text>
     </view>
@@ -118,6 +107,43 @@
   </view>
 </view>
 
+<!-- 排序&视图选项 -->
+<view class="newBox {{showView?'':'show'}}" hidden="{{showView}}">
+  <view class="newBar">
+    <view class="new-title"> 排序方式 </view>
+
+    <view class="new-item myhover">
+      <image src="../../images/name.png"></image>
+      <text>按名称排序</text>
+    </view>
+
+    <view class="new-item myhover">
+      <image src="../../images/time.png"></image>
+      <text>按时间排序</text>
+    </view>
+
+    <view class="new-item myhover">
+      <image src="../../images/type.png"></image>
+      <text>按类型排序</text>
+    </view>
+  </view>
+
+  <view class="newBar newBar2">
+    <view class="new-title"> 视图</view>
+
+    <view class="new-item myhover">
+      <image src="../../images/list.png"></image>
+      <text>列表</text>
+    </view>
+
+    <view class="new-item myhover">
+      <image src="../../images/slt.png"></image>
+      <text>缩略图</text>
+    </view>
+
+  </view>
+
+</view>
 
 <!-- 遮盖层 -->
-<view class="{{coverIsShow?'cover':''}}"></view>
+<view class="{{coverIsShow?'cover':''}}" bindtap="closeView"></view>

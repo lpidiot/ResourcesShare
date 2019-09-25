@@ -79,7 +79,7 @@ swiper {
   height: 40rpx;
 }
 
-/* 文件显示样式 */
+/* 文件列表显示样式 */
 
 .fileBox {
   width: 100%;
@@ -106,18 +106,23 @@ swiper {
   text-align: left;
 }
 
-.fileWrap .fileRightBtn {
+.fileRightBtn {
   margin-left: auto;
   margin-right: 20rpx;
 }
 
+.fileRightBtn image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
 .tit {
-  font-size: 32rpx;
-  font-weight: 550;
+  font-size: 26rpx;
+  font-weight: 555;
 }
 
 .time {
-  font-size: 26rpx;
+  font-size: 21rpx;
   font-weight: 440;
   color: rgb(112, 112, 112);
 }
@@ -126,6 +131,45 @@ swiper {
   width: 50rpx;
   height: 50rpx;
   margin: 0 20rpx;
+}
+
+/* 文件缩略图显示样式 */
+
+.fileCordBox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fileCord-wrap {
+  display: flex;
+  width: 47%;
+  background-color: #e9e9e9;
+  align-items: center;
+  margin: 8rpx;
+  height: 78rpx;
+}
+
+.fileCord-wrap text {
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  font-weight: 555;
+}
+
+.fileCord-wrap image {
+  margin-left: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.fileCordRightBtn {
+  margin-left: auto;
+  margin-right: 20rpx;
+}
+
+.fileCordRightBtn image {
+  width: 50rpx;
+  height: 50rpx;
 }
 
 /* 隐藏滚动条 */
@@ -221,7 +265,7 @@ swiper {
   border-bottom: 1rpx solid #eee;
   height: 85rpx;
   margin: 10rpx 0;
-  font-size: 26rpx;
+  font-size: 24rpx;
   font-weight: 444;
   color: rgb(112, 112, 112);
 }
@@ -238,9 +282,10 @@ swiper {
   padding: 20rpx;
 }
 
-.detailBar .detail-item:hover {
+/* .detailBar .detail-item:hover {
   background-color: #eee;
 }
+ */
 
 .detailBar .detail-item image {
   width: 40rpx;
@@ -248,9 +293,9 @@ swiper {
 }
 
 .detailBar .detail-item text {
-  font-size: 26rpx;
+  font-size: 24rpx;
   font-weight: 444;
-  margin-left: 20rpx;
+  margin-left: 25rpx;
 }
 
 .detail-cancel {
@@ -265,23 +310,104 @@ swiper {
   margin-top: 10rpx;
 }
 
+/* 排序/筛选 */
 
-@keyframes fade-in {  
-    0% {opacity: 0;}/*初始状态 透明度为0*/  
-    40% {opacity: 0;}/*过渡状态 透明度为0*/  
-    100% {opacity: 1;}/*结束状态 透明度为1*/  
-}  
-@-webkit-keyframes fade-in {/*针对webkit内核*/  
-    0% {opacity: 0;}  
-    40% {opacity: 0;}  
-    100% {opacity: 1;}  
-}  
-.show {    
-    animation: fade-in;/*动画名称*/  
-    animation-duration: 0.5s;/*动画持续时间*/  
-    -webkit-animation:fade-in 0.5s;/*针对webkit内核*/  
-}  
+.newBox {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 500rpx;
+  z-index: 1000;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
+.newBar {
+  display: flex;
+  flex: 30;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0rpx 30rpx;
+}
+
+.newBar2 {
+  flex: 22;
+}
+
+.newBar .new-title {
+  align-items: center;
+  width: 100%;
+  height: 60rpx;
+  margin: 8rpx 0;
+  font-size: 24rpx;
+  font-weight: 444;
+  color: rgb(112, 112, 112);
+}
+
+.newBar .new-item {
+  flex: 1;
+  width: 100%;
+  align-items: center;
+  padding: 5rpx;
+}
+
+.newBar .new-item:hover {
+  background-color: #eee;
+}
+
+.newBar .new-item image {
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.newBar .new-item text {
+  font-size: 24rpx;
+  font-weight: 444;
+  margin-left: 25rpx;
+}
+
+/* 动画 */
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }/*初始状态 透明度为0*/
+
+  40% {
+    opacity: 0;
+  }/*过渡状态 透明度为0*/
+
+  100% {
+    opacity: 1;
+  }/*结束状态 透明度为1*/
+}
+
+@-webkit-keyframes fade-in {
+  /*针对webkit内核*/
+
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.show {
+  animation: fade-in; /*动画名称*/
+  animation-duration: 0.5s; /*动画持续时间*/
+  -webkit-animation: fade-in 0.5s; /*针对webkit内核*/
+}
 
 /* 遮盖层 */
 
@@ -295,4 +421,8 @@ swiper {
   z-index: 600;
   opacity: 0.6;
   filter: Alpha(opacity=70);
+}
+
+.myhover:hover {
+  background-color: #eee;
 }
