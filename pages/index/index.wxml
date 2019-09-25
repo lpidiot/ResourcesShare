@@ -73,7 +73,7 @@
           <text>上传</text>
         </view>
 
-        <view class="uploadBar">
+        <view class="uploadBar" bindtap="selectFile">
           <image src="../../images/choose.png"></image>
           <text>选择</text>
         </view>

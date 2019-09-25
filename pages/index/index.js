@@ -37,5 +37,9 @@ Page({
       coverIsShow: !that.data.coverIsShow,
       showDetail: !that.data.showDetail
     })
+  },
+  //多选文件
+  selectFile:function(){
+    
   }
 })
